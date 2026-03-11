@@ -19,7 +19,7 @@ export default function About() {
         <p>
           This site is my corner of the internet where I write about
           programming, tools, ideas that interest me and recent scientific
-          publications. Every post is published here first and shared openly.
+          publications.
         </p>
       </div>
 
