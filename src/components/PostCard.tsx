@@ -26,7 +26,7 @@ export default function PostCard({ post }: Props) {
           </p>
         )}
         <div className="flex items-center gap-3 text-xs text-gray-400 dark:text-gray-500">
-          {dateLabel && <span>{dateLabel}</span>}
+          🗓️ {dateLabel && <span>{dateLabel}</span>}
           <span>·</span>
           <span>{post.readingTime}</span>
           {post.tags.length > 0 && (

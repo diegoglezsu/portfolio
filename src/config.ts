@@ -29,6 +29,7 @@ export const SOCIAL = {
   instagram: "https://www.instagram.com/diegogs_/",
   orcid: "https://orcid.org/0009-0004-6388-5333",
   email: "diegogs1451@gmail.com",
+  email2: "gonzalezsdiego@uniovi.es",
 };
 
 /** Number of posts shown on the home page */

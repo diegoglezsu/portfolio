@@ -155,10 +155,14 @@ export default function About() {
         <div className="flex flex-wrap gap-3">
           {[
             { label: "TypeScript · Node.js", emoji: "🇹" },
-            { label: "Java · Spring Boot", emoji: "♨️" },
+            { label: "Java · SpringBoot", emoji: "♨️" },
             { label: "Python", emoji: "🐍" },
-            { label: "React · React Native", emoji: "⚛️" },
-            { label: "Ollama · HuggingFace", emoji: "🤗" },
+            { label: "React · ReactNative", emoji: "⚛️" },
+            { label: "HuggingFace", emoji: "🤗" },
+            { label: "Ollama", emoji: "🦙" },
+            { label: "Cloud Services", emoji: "☁️" },
+            { label: "NoSQL", emoji: "🍃" },
+            { label: "SQL", emoji: "⛃" },
             { label: "Docker", emoji: "🐳" },
           ].map(({ label, emoji }) => (
             <span
@@ -179,7 +183,7 @@ export default function About() {
           <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer">
             X / Twitter
           </a>{" "}
-          or <a href={SOCIAL.email}>email</a>.
+          or <a href={`mailto:${SOCIAL.email}`}>email</a>.
         </p>
       </div>
 
