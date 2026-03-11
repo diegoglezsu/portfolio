@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero */}
       <section className="mb-14 flex items-center gap-10">
         <img
-          src="/profile.jpg"
+          src={`${import.meta.env.BASE_URL}profile.jpg`}
           alt={SITE.name}
           className="w-36 h-40 rounded-full object-cover shrink-0"
         />
