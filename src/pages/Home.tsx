@@ -18,7 +18,7 @@ export default function Home() {
         />
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-            Hi, I'm {SITE.handle} 👋.
+            Hi, I'm {SITE.handle} 👋
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
             {SITE.tagline}
