@@ -158,6 +158,7 @@ export default function About() {
             { label: "Java · SpringBoot", emoji: "♨️" },
             { label: "Python", emoji: "🐍" },
             { label: "React · ReactNative", emoji: "⚛️" },
+            { label: "AI Integrations", emoji: "🤖" },
             { label: "HuggingFace", emoji: "🤗" },
             { label: "Ollama", emoji: "🦙" },
             { label: "Cloud Services", emoji: "☁️" },
