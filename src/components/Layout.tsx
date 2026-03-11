@@ -99,12 +99,6 @@ export default function Layout() {
           <span>
             © {new Date().getFullYear()} {SITE.name}
           </span>
-          <a
-            href={SITE.url}
-            className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
-          >
-            {SITE.url.replace(/^https?:\/\//, "")}
-          </a>
         </div>
       </footer>
     </div>
