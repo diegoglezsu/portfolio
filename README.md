@@ -67,3 +67,7 @@ Enable Pages in **Settings → Pages → Source: GitHub Actions**.
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details. © Diego González Suárez
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+### Content license
+
+Blog posts and other written content are licensed under the Creative Commons Attribution-ShareAlike 4.0 International license (CC BY‑SA 4.0). See the [LICENSE-CONTENT](LICENSE-CONTENT) file for details or the full license at <https://creativecommons.org/licenses/by-sa/4.0/>.
