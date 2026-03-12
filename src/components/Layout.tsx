@@ -18,7 +18,7 @@ export default function Layout() {
           <div>
             <div>© {new Date().getFullYear()} Diego</div>
             <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Content:{" "}
+              Blog content:{" "}
               <a
                 href="https://creativecommons.org/licenses/by-sa/4.0/"
                 className="text-gray-600 dark:text-gray-300 hover:underline"
@@ -26,7 +26,7 @@ export default function Layout() {
                 CC BY‑SA 4.0
               </a>
               <br />
-              Code:{" "}
+              Source code:{" "}
               <a
                 href="https://opensource.org/licenses/MIT"
                 className="text-gray-600 dark:text-gray-300 hover:underline"
