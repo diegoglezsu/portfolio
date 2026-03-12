@@ -72,6 +72,29 @@ export default function Post() {
         </ReactMarkdown>
       </div>
 
+      {/* Back to Top */}
+      <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-end">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex items-center gap-1.5 text-sm text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="w-4 h-4"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 17a.75.75 0 0 1-.75-.75V5.612L5.29 9.77a.75.75 0 0 1-1.08-1.04l5.25-5.5a.75.75 0 0 1 1.08 0l5.25 5.5a.75.75 0 1 1-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0 1 10 17Z"
+              clipRule="evenodd"
+            />
+          </svg>
+          Back to Top
+        </button>
+      </div>
+
       {/* Navigation, previous and next post */}
       {(prev || next) && (
         <nav className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex justify-between gap-8">

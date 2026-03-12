@@ -2,7 +2,7 @@
 title: "Why this webpage?"
 date: "2026-03-11"
 description: "Credits to Peter Steinberg Webpage."
-tags: [typescript, web]
+tags: [web, portfolio, blog]
 ---
 
 ## Introduction
