@@ -62,7 +62,7 @@ Post content here…
 Pushes to `main` automatically build and deploy via GitHub Actions.  
 Enable Pages in **Settings → Pages → Source: GitHub Actions**.
 
-## License
+## Code License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details. © Diego González Suárez
 
@@ -70,4 +70,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ### Content license
 
-Blog posts and other written content are licensed under the Creative Commons Attribution-ShareAlike 4.0 International license (CC BY‑SA 4.0). See the [LICENSE-CONTENT](LICENSE-CONTENT) file for details or the full license at <https://creativecommons.org/licenses/by-sa/4.0/>.
+Blog posts and other written content are licensed under the Creative Commons Attribution-ShareAlike 4.0 International license (CC BY‑SA 4.0). See the [LICENSE-CC-BY-SA-4.0](LICENSE-CC-BY-SA-4.0) file for details or the full license at <https://creativecommons.org/licenses/by-sa/4.0/>.
