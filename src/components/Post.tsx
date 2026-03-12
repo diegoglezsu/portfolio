@@ -52,14 +52,24 @@ export default function Post() {
             {post.description}
           </p>
         )}
-        <div className="flex items-center gap-3 text-sm text-gray-400 dark:text-gray-500">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400 dark:text-gray-500">
           {dateLabel && <time dateTime={post.date}>{dateLabel}</time>}
           <span>·</span>
           <span>{post.readingTime}</span>
           {post.tags.length > 0 && (
             <>
               <span>·</span>
-              <span>{post.tags.join(", ")}</span>
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <Link
+                    key={tag}
+                    to={`/tags/${encodeURIComponent(tag)}`}
+                    className="text-blue-500 hover:underline transition-colors"
+                  >
+                    #{tag}
+                  </Link>
+                ))}
+              </div>
             </>
           )}
         </div>

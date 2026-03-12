@@ -112,3 +112,9 @@ export function getAdjacentPosts(slug: string): {
   const next = idx - 1 >= 0 ? posts[idx - 1] : null;
   return { prev, next };
 }
+
+export function getPostsByTag(tag: string): Post[] {
+  return getAllPosts().filter((post) =>
+    post.tags.some((t) => t.toLowerCase() === tag.toLowerCase()),
+  );
+}
