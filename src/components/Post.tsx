@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { getAdjacentPosts, getPostBySlug } from "../lib/posts";
 
@@ -77,7 +78,7 @@ export default function Post() {
 
       {/* Body */}
       <div className="prose">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
           {post.content}
         </ReactMarkdown>
       </div>
