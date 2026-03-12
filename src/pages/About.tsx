@@ -10,24 +10,23 @@ export default function About() {
 
       <div className="prose">
         <p>
-          Hi! I'm <b>{SITE.name}</b> — an engineer from Spain 🇪🇸 passionate
-          about building software and sharing what I learn along the way. I
-          consider myself as a proactive person who always likes to look for new
-          personal and professional opportunities towards improving my career
-          path.
+          Hi! I'm <b>{SITE.name}</b> — a software and web engineer from Spain 🇪🇸
+          passionate about building software and sharing what I learn along the
+          way. I consider myself as a proactive person who always likes to look
+          for new personal and professional opportunities towards improving my
+          career path.
         </p>
         <p>
           This site is my corner of the internet where I write about{" "}
           <b>programming, tools, ideas and recent scientific publications</b>{" "}
-          that I find interesting. Furthermore, I will also share some off-topic
-          posts.😉
+          that I find interesting 😉. I will also share some off-topic posts.
         </p>
       </div>
 
       {/* Education */}
       <section className="mt-10">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">
-          Education
+          Education 🎓
         </h2>
         <Timeline
           items={[
@@ -53,7 +52,7 @@ export default function About() {
       {/* Experience */}
       <section className="mt-10">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">
-          Experience
+          Experience 💼
         </h2>
         <Timeline
           items={[
@@ -92,7 +91,7 @@ export default function About() {
       {/* Technologies */}
       <section className="mt-10">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">
-          Technologies
+          Technologies 🛠️
         </h2>
         <div className="flex flex-wrap gap-3">
           {[
@@ -120,7 +119,7 @@ export default function About() {
       </section>
 
       <div className="prose mt-10">
-        <h2>Get in touch</h2>
+        <h2>Get in touch 📩</h2>
         <p>
           The best ways to reach me are{" "}
           <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer">
