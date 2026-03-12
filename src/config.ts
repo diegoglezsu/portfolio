@@ -12,7 +12,8 @@ export const SITE = {
   handle: "Diego",
 
   /** One-liner tagline shown below the handle */
-  tagline: "Software and web engineer.",
+  tagline:
+    "Software and web engineer. Building things, sharing knowledge and researching.",
 
   /** Used in <title> and meta description */
   description: "Personal website and blog.",

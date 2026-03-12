@@ -11,11 +11,14 @@ export default function Home() {
     <div className="max-w-2xl mx-auto px-4 pt-16 pb-8">
       {/* Hero */}
       <section className="mb-14 flex items-center gap-10">
-        <img
-          src={`${import.meta.env.BASE_URL}profile.jpg`}
-          alt={SITE.name}
-          className="w-36 h-40 rounded-full object-cover shrink-0"
-        />
+        <Link to="/about" className="shrink-0 group">
+          <img
+            src={`${import.meta.env.BASE_URL}profile.jpg`}
+            alt={SITE.name}
+            className="w-36 h-40 rounded-full object-cover shrink-0 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+          />
+        </Link>
+
         <div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
             Hi, I'm {SITE.handle} 👋

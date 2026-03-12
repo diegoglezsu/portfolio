@@ -1,4 +1,3 @@
-import SocialLinks from "../components/SocialLinks";
 import { SITE, SOCIAL } from "../config";
 
 export default function About() {
@@ -18,8 +17,9 @@ export default function About() {
         </p>
         <p>
           This site is my corner of the internet where I write about
-          programming, tools, ideas that interest me and recent scientific
-          publications.
+          programming, tools, ideas and recent scientific publications that I
+          find interesting. Furthermore, I will also share some off-topic
+          posts.😉
         </p>
       </div>
 
@@ -32,7 +32,7 @@ export default function About() {
           <li className="pl-6">
             <span className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white dark:border-gray-950 bg-gray-400 dark:bg-gray-500" />
             <p className="text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">
-              September 2026 – present
+              present
             </p>
             <p className="font-semibold text-gray-900 dark:text-gray-100">
               To be continued…
@@ -186,10 +186,6 @@ export default function About() {
           </a>{" "}
           or <a href={`mailto:${SOCIAL.email}`}>email</a>.
         </p>
-      </div>
-
-      <div className="mt-10">
-        <SocialLinks />
       </div>
     </div>
   );

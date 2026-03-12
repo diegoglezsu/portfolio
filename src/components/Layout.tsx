@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { SITE } from "../config";
+import SocialLinks from "./SocialLinks";
 
 function ThemeToggle() {
   const [dark, setDark] = useState(() => {
@@ -99,6 +100,7 @@ export default function Layout() {
           <span>
             © {new Date().getFullYear()} {SITE.name}
           </span>
+          <SocialLinks />
         </div>
       </footer>
     </div>

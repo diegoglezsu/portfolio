@@ -99,3 +99,16 @@ export function getAllPosts(): Post[] {
 export function getPostBySlug(slug: string): Post | undefined {
   return getAllPosts().find((p) => p.slug === slug);
 }
+
+export function getAdjacentPosts(slug: string): {
+  prev: PostMeta | null;
+  next: PostMeta | null;
+} {
+  const posts = getAllPosts();
+  const idx = posts.findIndex((p) => p.slug === slug);
+  if (idx === -1) return { prev: null, next: null };
+  // posts are sorted newest-first, so "previous" = idx + 1, "next" = idx - 1
+  const prev = idx + 1 < posts.length ? posts[idx + 1] : null;
+  const next = idx - 1 >= 0 ? posts[idx - 1] : null;
+  return { prev, next };
+}

@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import remarkGfm from "remark-gfm";
-import { getPostBySlug } from "../lib/posts";
+import { getAdjacentPosts, getPostBySlug } from "../lib/posts";
 
 export default function Post() {
   const { slug, "*": rest } = useParams();
@@ -9,6 +9,7 @@ export default function Post() {
   const fullSlug = rest ? `${slug}/${rest}` : (slug ?? "");
 
   const post = getPostBySlug(fullSlug);
+  const { prev, next } = getAdjacentPosts(fullSlug);
 
   if (!post) {
     return (
@@ -70,6 +71,42 @@ export default function Post() {
           {post.content}
         </ReactMarkdown>
       </div>
+
+      {/* Navigation, previous and next post */}
+      {(prev || next) && (
+        <nav className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex justify-between gap-8">
+          <div className="flex-1">
+            {prev && (
+              <Link
+                to={`/posts/${prev.slug}`}
+                className="group flex flex-col gap-1"
+              >
+                <span className="flex items-center gap-1 text-sm text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                  <span aria-hidden="true">&#8249;</span> Previous Post
+                </span>
+                <span className="text-blue-500 group-hover:underline font-medium">
+                  {prev.title}
+                </span>
+              </Link>
+            )}
+          </div>
+          <div className="flex-1 text-right">
+            {next && (
+              <Link
+                to={`/posts/${next.slug}`}
+                className="group flex flex-col gap-1 items-end"
+              >
+                <span className="flex items-center gap-1 text-sm text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                  Next Post <span aria-hidden="true">&#8250;</span>
+                </span>
+                <span className="text-blue-500 group-hover:underline font-medium">
+                  {next.title}
+                </span>
+              </Link>
+            )}
+          </div>
+        </nav>
+      )}
     </div>
   );
 }
