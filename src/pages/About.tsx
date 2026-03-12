@@ -10,11 +10,11 @@ export default function About() {
 
       <div className="prose">
         <p>
-          Hi! I'm <strong>{SITE.name}</strong> — an engineer from 🇪🇸 passionate
-          about building software and sharing what I learn along the way. I
-          consider myself as a proactive person who always likes to look for new
-          personal and professional opportunities towards improving my career
-          path.
+          Hi! I'm <strong>{SITE.name}</strong> — an engineer from Spain 🇪🇸
+          passionate about building software and sharing what I learn along the
+          way. I consider myself as a proactive person who always likes to look
+          for new personal and professional opportunities towards improving my
+          career path.
         </p>
         <p>
           This site is my corner of the internet where I write about
