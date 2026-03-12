@@ -25,14 +25,16 @@ export default function PostCard({ post }: Props) {
             {post.description}
           </p>
         )}
-        <div className="flex items-center gap-3 text-xs text-gray-400 dark:text-gray-500">
+        <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400 dark:text-gray-500">
           🗓️ {dateLabel && <span>{dateLabel}</span>}
           <span>·</span>
           <span>{post.readingTime}</span>
           {post.tags.length > 0 && (
             <>
               <span>·</span>
-              <span>{post.tags.join(", ")}</span>
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => `#${tag}`).join(" ")}
+              </div>
             </>
           )}
         </div>

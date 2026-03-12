@@ -4,6 +4,7 @@ import Post from "./components/Post";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Posts from "./pages/Posts";
+import Search from "./pages/Search";
 import Tag from "./pages/Tag";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="posts/:slug" element={<Post />} />
           <Route path="posts/:slug/*" element={<Post />} />
           <Route path="tags/:tag" element={<Tag />} />
+          <Route path="search" element={<Search />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
