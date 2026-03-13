@@ -13,7 +13,7 @@ I wanted to have something similar (obviously vibe coding), so I decided to crea
 
 <div style="display: flex; justify-content: center;">
     <img
-        src="/images/2026/first-post/logo.png"
+        src="./images/2026/first-post/logo.png"
         alt="Logo"
     />
 </div>
