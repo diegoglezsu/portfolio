@@ -76,7 +76,7 @@ export default function About() {
               title: "Software Engineer",
               subtitle: "The Cocktail",
               description:
-                "Work on projects for energy companies in Portugal and Spain. I used Node.js with TypeScript and the NestJS framework to develop and design REST API services.",
+                "Work on projects for energy companies in Portugal and Spain. I used Node.js with TypeScript and NestJS framework to develop and design REST API services.",
             },
             {
               date: "July 2022 – August 2022",

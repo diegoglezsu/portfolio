@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { getAdjacentPosts, getPostBySlug } from "../lib/posts";
-
+import ShareButtons from "./ShareButtons";
 export default function Post() {
   const { slug, "*": rest } = useParams();
   // Support nested slugs like 2025/my-post
@@ -82,6 +82,8 @@ export default function Post() {
           {post.content}
         </ReactMarkdown>
       </div>
+
+      <ShareButtons title={post.title} />
 
       {/* Back to Top */}
       <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-end">
