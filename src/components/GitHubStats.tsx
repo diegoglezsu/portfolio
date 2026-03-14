@@ -27,7 +27,6 @@ type Props = {
 
 export default function GitHubStats({ username }: Props) {
   const [user, setUser] = useState<GitHubUser | null>(null);
-  const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [contributions, setContributions] = useState<ContributionData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -40,14 +39,6 @@ export default function GitHubStats({ username }: Props) {
         if (!userRes.ok) throw new Error("Failed to fetch GitHub user");
         const userData: GitHubUser = await userRes.json();
         setUser(userData);
-
-        // Fetch latest repos
-        const reposRes = await fetch(
-          `https://api.github.com/users/${username}/repos?sort=stars&per_page=6&type=owner`,
-        );
-        if (!reposRes.ok) throw new Error("Failed to fetch repositories");
-        const reposData: GitHubRepo[] = await reposRes.json();
-        setRepos(reposData.filter((r) => !r.name.includes("portfolio")));
 
         // Fetch contribution data from public events
         const eventsRes = await fetch(

@@ -96,7 +96,7 @@ export default function ContributionGraph({
           <div className="flex gap-1">
             {/* Day labels */}
             <div className="flex flex-col gap-1">
-              {dayLabels.map((day, idx) => (
+              {dayLabels.map((day) => (
                 <div
                   key={day}
                   className="h-3 w-8 text-xs text-gray-600 dark:text-gray-400 flex items-center justify-center"
