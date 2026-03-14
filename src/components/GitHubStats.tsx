@@ -13,14 +13,6 @@ interface GitHubUser {
   avatar_url: string;
 }
 
-interface GitHubRepo {
-  name: string;
-  description: string;
-  stargazers_count: number;
-  language: string;
-  url: string;
-}
-
 type Props = {
   username: string;
 };
