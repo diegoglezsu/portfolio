@@ -5,9 +5,9 @@ import SearchButton from "./SearchButton";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-  `text-sm font-medium transition-colors ${
+  `text-sm font-medium transition-colors px-3 py-1.5 rounded-md ${
     isActive
-      ? "text-gray-900 dark:text-gray-100"
+      ? "text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-900/30 font-semibold"
       : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
   }`;
 
