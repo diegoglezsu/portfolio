@@ -122,8 +122,8 @@ export default function About() {
         <h2>Get in touch 📩</h2>
         <p>
           The best ways to reach me are{" "}
-          <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer">
-            X / Twitter
+          <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
           </a>{" "}
           or <a href={`mailto:${SOCIAL.email}`}>email</a>.
         </p>

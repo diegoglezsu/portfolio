@@ -54,9 +54,9 @@ export default function Post() {
           </p>
         )}
         <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400 dark:text-gray-500">
-          {dateLabel && <time dateTime={post.date}>{dateLabel}</time>}
+          🗓️ {dateLabel && <time dateTime={post.date}>{dateLabel}</time>}
           <span>·</span>
-          <span>{post.readingTime}</span>
+          <span>⏳ {post.readingTime}</span>
           {post.tags.length > 0 && (
             <>
               <span>·</span>
