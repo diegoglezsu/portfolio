@@ -1,3 +1,4 @@
+import GitHubStats from "../components/GitHubStats";
 import Timeline from "../components/Timeline";
 import { SITE, SOCIAL } from "../config";
 
@@ -116,6 +117,14 @@ export default function About() {
             </span>
           ))}
         </div>
+      </section>
+
+      {/* GitHub */}
+      <section className="mt-10">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">
+          GitHub Stats 📈
+        </h2>
+        <GitHubStats username="diegoglezsu" />
       </section>
 
       <div className="prose mt-10">
