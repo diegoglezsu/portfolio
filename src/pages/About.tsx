@@ -1,10 +1,15 @@
 import GitHubStats from "../components/GitHubStats";
+import MetaTags from "../components/MetaTags";
 import Timeline from "../components/Timeline";
 import { SITE, SOCIAL } from "../config";
 
 export default function About() {
   return (
     <div className="max-w-2xl mx-auto px-4 pt-14 pb-16">
+      <MetaTags
+        title="About"
+        description="Learn more about Diego González Suárez, software and web engineer."
+      />
       <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8">
         About
       </h1>

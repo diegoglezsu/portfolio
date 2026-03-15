@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import MetaTags from "../components/MetaTags";
 import PostCard from "../components/PostCard";
 import SocialLinks from "../components/SocialLinks";
 import { HOME_POST_LIMIT, SITE } from "../config";
@@ -9,6 +10,7 @@ export default function Home() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-16 pb-8">
+      <MetaTags />
       {/* Hero */}
       <section className="mb-14 flex items-center gap-10">
         <Link to="/about" className="shrink-0 group">

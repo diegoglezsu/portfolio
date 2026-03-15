@@ -2,10 +2,14 @@ import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+import { SITE } from "../config";
 import { getAdjacentPosts, getPostBySlug } from "../lib/posts";
+import MetaTags from "./MetaTags";
 import ShareButtons from "./ShareButtons";
+
 export default function Post() {
   const { slug, "*": rest } = useParams();
+
   // Support nested slugs like 2025/my-post
   const fullSlug = rest ? `${slug}/${rest}` : (slug ?? "");
 
@@ -35,6 +39,13 @@ export default function Post() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-12 pb-16">
+      <MetaTags
+        title={post.title}
+        description={post.description}
+        type="article"
+        publishedDate={post.date}
+        url={`${SITE.url}#/posts/${fullSlug}`}
+      />
       {/* Back link */}
       <Link
         to="/posts"

@@ -16,7 +16,8 @@ export const SITE = {
     "Software and web engineer. Building things, sharing knowledge and researching.",
 
   /** Used in <title> and meta description */
-  description: "Personal website and blog.",
+  description:
+    "Personal website and blog of Diego González Suárez, software and web engineer.",
 
   /** Base URL (no trailing slash) */
   url: "https://diegoglezsu.github.io/portfolio/",
