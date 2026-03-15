@@ -9,7 +9,7 @@ tags: [web, portfolio, blog, logo]
 
 This is my first post on my website! A few weeks ago I was scrolling on Twitter (I still say Twitter even though it is now X) and I came across a thread by Peter Steinberg, then, I visited his webpage and I loved it.
 
-I wanted to have something similar (obviously vibe coding), so I decided to create my own personal website and blog. This is the result 😉.
+I wanted to have something similar (obviously vibe coding), so I decided to create my own personal website and blog. This is the result 😉. Personal logo is below.
 
 <div style="display: flex; justify-content: center;">
     <img
@@ -17,5 +17,3 @@ I wanted to have something similar (obviously vibe coding), so I decided to crea
         alt="Logo"
     />
 </div>
-
-I think that having a personal website improves your online presence so my logo is above.
