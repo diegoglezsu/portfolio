@@ -10,6 +10,7 @@ export interface PostMeta {
   readingTime: string; // e.g. "4 min read"
   tags: string[];
   draft?: boolean;
+  image?: string;
 }
 
 export interface Post extends PostMeta {
@@ -68,6 +69,38 @@ function slugFromPath(path: string): string {
   return path.replace(/^.*posts\//, "").replace(/\.md$/, "");
 }
 
+function extractFirstImage(content: string): string | undefined {
+  // Only extract image if it's the first element in the content
+  // Trim leading whitespace and newlines
+  const trimmedContent = content.replace(/^\s+/, "");
+
+  // Check if content starts with an image element
+  // Markdown images: ![alt](url)
+  if (trimmedContent.match(/^!\[.*?\]\((.*?)\)/)) {
+    const mdMatch = trimmedContent.match(/^!\[.*?\]\((.*?)\)/);
+    if (mdMatch) return resolveImagePath(mdMatch[1]);
+  }
+
+  // Check HTML images: <img src="url" ... /> or <div><img...
+  if (
+    trimmedContent.match(/^<[^>]*img/i) ||
+    trimmedContent.match(/^<div[^>]*>[\s\n]*<img/i)
+  ) {
+    const htmlMatch = trimmedContent.match(/<img[\s\S]*?src=["'](.*?)["']/);
+    if (htmlMatch) return resolveImagePath(htmlMatch[1]);
+  }
+
+  return undefined;
+}
+
+function resolveImagePath(src: string): string {
+  if (src.startsWith("http") || src.startsWith("/")) return src;
+  // If it's relative like ./images/..., we need to point it to the public folder
+  // The structure is public/images/YEAR/post-slug/image.png
+  // The content uses ./images/YEAR/post-slug/image.png often, let's normalize it
+  return src.replace(/^\.\//, "/");
+}
+
 function buildPost(path: string, raw: string): Post {
   const { meta, content } = parseFrontmatter(raw);
   const slug = slugFromPath(path);
@@ -79,6 +112,7 @@ function buildPost(path: string, raw: string): Post {
     readingTime: estimateReadingTime(content),
     tags: parseTags(meta.tags),
     draft: meta.draft === "true",
+    image: meta.image ?? extractFirstImage(content),
     content,
   };
 }
