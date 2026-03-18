@@ -51,11 +51,7 @@ export default function PostCard({ post }: Props) {
                 className="w-full h-full object-cover transition-transform"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  if (target.src.includes("./")) {
-                    target.src = target.src.replace("./", "/");
-                  } else {
-                    target.style.display = "none";
-                  }
+                  target.style.display = "none";
                 }}
               />
             </div>

@@ -94,11 +94,17 @@ function extractFirstImage(content: string): string | undefined {
 }
 
 function resolveImagePath(src: string): string {
-  if (src.startsWith("http") || src.startsWith("/")) return src;
-  // If it's relative like ./images/..., we need to point it to the public folder
-  // The structure is public/images/YEAR/post-slug/image.png
-  // The content uses ./images/YEAR/post-slug/image.png often, let's normalize it
-  return src.replace(/^\.\//, "/");
+  // Keep URLs and existing absolute/relative paths as-is
+  if (src.startsWith("http")) return src;
+
+  // For relative paths like ./images/..., keep them relative to work with base: './' in Vite
+  if (src.startsWith("./")) return src;
+
+  // For paths without ./, add it to make them relative
+  if (!src.startsWith("/")) return `./${src}`;
+
+  // For absolute paths starting with /, also convert to relative for Vite
+  return `.${src}`;
 }
 
 function buildPost(path: string, raw: string): Post {
