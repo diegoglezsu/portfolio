@@ -42,7 +42,7 @@ export default function PostCard({ post }: Props) {
           )}
         </div>
 
-        <div className="flex gap-4 mb-3">
+        <div className="flex gap-4">
           {post.image && (
             <div className="flex-shrink-0 w-40 h-20 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
               <img
@@ -59,7 +59,7 @@ export default function PostCard({ post }: Props) {
 
           <div className="flex-1 min-w-0">
             {post.description && (
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-2 line-clamp-2">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-2 line-clamp-4">
                 {post.description}
               </p>
             )}
