@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Posts from "./pages/Posts";
 import Search from "./pages/Search";
 import Tag from "./pages/Tag";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
           <Route path="tags/:tag" element={<Tag />} />
           <Route path="search" element={<Search />} />
           <Route path="about" element={<About />} />
+          {/* Catch-all for undefined routes inside layout */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>
