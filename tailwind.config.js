@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Atkinson Hyperlegible"', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        sans: ['Inconsolata', 'monospace'],
+        mono: ['Inconsolata', 'monospace'],
       },
       typography: {
         DEFAULT: {

@@ -54,34 +54,44 @@ export default function Posts() {
             .length;
 
           return (
-            <section key={year} className="mb-14">
-              <div className="flex items-baseline gap-3 border-b border-gray-100 dark:border-gray-800 pb-2 mb-8">
+            <details key={year} className="mb-14 group/year" open>
+              <summary className="flex items-baseline gap-3 border-b border-gray-100 dark:border-gray-800 pb-2 mb-8 cursor-pointer list-none">
+                <span className="text-gray-400 dark:text-gray-500 text-xs select-none transition-transform group-open/year:rotate-90 inline-block">
+                  ▶
+                </span>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">
                   {year}
                 </h2>
                 <span className="text-xs font-mono text-gray-400 dark:text-gray-500">
                   {totalPostsInYear}
                 </span>
-              </div>
+              </summary>
 
               {sortedMonths.map((month) => (
-                <div key={month} className="mb-10 last:mb-0">
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <h3 className="text-sm font-bold text-gray-800 dark:text-gray-200">
+                <details
+                  key={month}
+                  className="mb-10 last:mb-0 group/month"
+                  open
+                >
+                  <summary className="flex items-baseline gap-2 border-b border-gray-100 dark:border-gray-800 pb-2 mb-4 cursor-pointer list-none">
+                    <span className="text-gray-400 dark:text-gray-500 text-[10px] select-none transition-transform group-open/month:rotate-90 inline-block">
+                      ▶
+                    </span>
+                    <h3 className="text-md font-bold text-gray-800 dark:text-gray-200">
                       {month}
                     </h3>
                     <span className="text-[10px] font-mono text-gray-400 dark:text-gray-500">
                       {groupedPosts[year][month].length}
                     </span>
-                  </div>
+                  </summary>
                   <div className="space-y-2">
                     {groupedPosts[year][month].map((post) => (
                       <PostCard key={post.slug} post={post} />
                     ))}
                   </div>
-                </div>
+                </details>
               ))}
-            </section>
+            </details>
           );
         })
       )}
