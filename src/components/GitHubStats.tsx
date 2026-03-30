@@ -32,13 +32,20 @@ export default function GitHubStats({ username }: Props) {
         const userData: GitHubUser = await userRes.json();
         setUser(userData);
 
-        // Fetch contribution data from public events
-        const eventsRes = await fetch(
-          `https://api.github.com/users/${username}/events/public?per_page=300`,
-        );
-        if (eventsRes.ok) {
+        // Fetch contribution data from multiple pages of public events
+        // This gives us more history than just per_page=300
+        const contributionMap = new Map<string, number>();
+
+        // Fetch multiple pages to get larger history window
+        for (let page = 1; page <= 10; page++) {
+          const eventsRes = await fetch(
+            `https://api.github.com/users/${username}/events/public?per_page=100&page=${page}`,
+          );
+
+          if (!eventsRes.ok) break;
+
           const events = await eventsRes.json();
-          const contributionMap = new Map<string, number>();
+          if (events.length === 0) break;
 
           // Count events by date
           events.forEach((event: any) => {
@@ -47,14 +54,15 @@ export default function GitHubStats({ username }: Props) {
               contributionMap.set(date, (contributionMap.get(date) || 0) + 1);
             }
           });
-
-          // Convert to array and sort
-          const contributionArray = Array.from(contributionMap.entries())
-            .map(([date, count]) => ({ date, count }))
-            .sort((a, b) => a.date.localeCompare(b.date));
-
-          setContributions(contributionArray);
         }
+
+        // Convert to array and sort
+        const contributionArray = Array.from(contributionMap.entries())
+          .map(([date, count]) => ({ date, count }))
+          .sort((a, b) => a.date.localeCompare(b.date));
+
+        console.log("Contribution data:", contributionArray);
+        setContributions(contributionArray);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Unknown error");
       } finally {
