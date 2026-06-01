@@ -22,11 +22,6 @@ export default function About() {
           for new personal and professional opportunities towards improving my
           career path.
         </p>
-        <p>
-          This site is my corner of the internet where I write about{" "}
-          <b>programming, tools, ideas and recent scientific publications</b>{" "}
-          that I find interesting 😉. I will also share some off-topic posts.
-        </p>
       </div>
 
       {/* Education */}
@@ -105,13 +100,12 @@ export default function About() {
             { label: "Java · SpringBoot", emoji: "♨️" },
             { label: "Python", emoji: "🐍" },
             { label: "React · ReactNative", emoji: "⚛️" },
-            { label: "AI Integrations", emoji: "🤖" },
-            { label: "HuggingFace", emoji: "🤗" },
+            { label: "Angular", emoji: "🅰️" },
+            { label: "Docker", emoji: "🐳" },
             { label: "Ollama", emoji: "🦙" },
             { label: "Cloud Services", emoji: "☁️" },
             { label: "NoSQL", emoji: "🍃" },
             { label: "SQL", emoji: "⛃" },
-            { label: "Docker", emoji: "🐳" },
           ].map(({ label, emoji }) => (
             <span
               key={label}

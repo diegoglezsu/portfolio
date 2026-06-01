@@ -28,7 +28,6 @@ export const SOCIAL = {
   twitter: "https://x.com/diegogs__",
   linkedin:
     "https://www.linkedin.com/in/diego-gonz%C3%A1lez-su%C3%A1rez-64b2371b1",
-  instagram: "https://www.instagram.com/diegogs_/",
   orcid: "https://orcid.org/0009-0004-6388-5333",
   email: "diegogs1451@gmail.com",
   email2: "gonzalezsdiego@uniovi.es",
