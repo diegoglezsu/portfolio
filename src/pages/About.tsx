@@ -18,9 +18,9 @@ export default function About() {
         <p>
           Hi! I'm <b>{SITE.name}</b> — a software and web engineer from Spain 🇪🇸
           passionate about building software and sharing what I learn along the
-          way. I consider myself as a proactive person who likes to look
-          for new personal and professional opportunities towards improving my
-          career path.
+          way. I consider myself as a proactive person who likes to look for new
+          personal and professional opportunities towards improving my career
+          path.
         </p>
       </div>
 
@@ -102,6 +102,7 @@ export default function About() {
             { label: "React · ReactNative", emoji: "⚛️" },
             { label: "Angular", emoji: "🅰️" },
             { label: "Docker", emoji: "🐳" },
+            { label: "Hugging Face", emoji: "🤗" },
             { label: "Ollama", emoji: "🦙" },
             { label: "Cloud Services", emoji: "☁️" },
             { label: "NoSQL", emoji: "🍃" },
