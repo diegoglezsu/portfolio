@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { type ContributionData } from "./GithubContributionGraph";
 
 interface GitHubUser {
   login: string;
@@ -9,6 +8,16 @@ interface GitHubUser {
   bio: string;
   company: string;
   avatar_url: string;
+  public_gists: number;
+  created_at: string;
+}
+
+function getAccountAge(createdAt: string): string {
+  const years = Math.floor(
+    (Date.now() - new Date(createdAt).getTime()) /
+      (365.25 * 24 * 60 * 60 * 1000),
+  );
+  return years < 1 ? "< 1 yr" : `${years} yrs`;
 }
 
 type Props = {
@@ -17,50 +26,29 @@ type Props = {
 
 export default function GitHubStats({ username }: Props) {
   const [user, setUser] = useState<GitHubUser | null>(null);
-  const [contributions, setContributions] = useState<ContributionData[]>([]);
+  const [stars, setStars] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchGitHubData = async () => {
       try {
-        // Fetch user data
         const userRes = await fetch(`https://api.github.com/users/${username}`);
         if (!userRes.ok) throw new Error("Failed to fetch GitHub user");
         const userData: GitHubUser = await userRes.json();
         setUser(userData);
 
-        // Fetch contribution data from multiple pages of public events
-        // This gives us more history than just per_page=300
-        const contributionMap = new Map<string, number>();
-
-        // Fetch multiple pages to get larger history window
-        for (let page = 1; page <= 10; page++) {
-          const eventsRes = await fetch(
-            `https://api.github.com/users/${username}/events/public?per_page=100&page=${page}`,
+        const reposRes = await fetch(
+          `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
+        );
+        if (reposRes.ok) {
+          const repos = await reposRes.json();
+          const totalStars = repos.reduce(
+            (sum: number, repo: any) => sum + (repo.stargazers_count || 0),
+            0,
           );
-
-          if (!eventsRes.ok) break;
-
-          const events = await eventsRes.json();
-          if (events.length === 0) break;
-
-          // Count events by date
-          events.forEach((event: any) => {
-            const date = event.created_at?.split("T")[0];
-            if (date) {
-              contributionMap.set(date, (contributionMap.get(date) || 0) + 1);
-            }
-          });
+          setStars(totalStars);
         }
-
-        // Convert to array and sort
-        const contributionArray = Array.from(contributionMap.entries())
-          .map(([date, count]) => ({ date, count }))
-          .sort((a, b) => a.date.localeCompare(b.date));
-
-        console.log("Contribution data:", contributionArray);
-        setContributions(contributionArray);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Unknown error");
       } finally {
@@ -113,6 +101,30 @@ export default function GitHubStats({ username }: Props) {
           </div>
           <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
             Following
+          </div>
+        </div>
+        <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-center">
+          <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
+            {stars}
+          </div>
+          <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            Stars Earned
+          </div>
+        </div>
+        <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-center">
+          <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
+            {user.public_gists}
+          </div>
+          <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            Public Gists
+          </div>
+        </div>
+        <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-center">
+          <div className="text-2xl font-bold text-rose-600 dark:text-rose-400">
+            {getAccountAge(user.created_at)}
+          </div>
+          <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+            Account Age
           </div>
         </div>
       </div>
