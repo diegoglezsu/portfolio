@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import ContributionGraph, {
-  type ContributionData,
-} from "./GithubContributionGraph";
+import { type ContributionData } from "./GithubContributionGraph";
 
 interface GitHubUser {
   login: string;
@@ -117,26 +115,6 @@ export default function GitHubStats({ username }: Props) {
             Following
           </div>
         </div>
-      </div>
-
-      {/* Contribution Graph */}
-      {contributions.length > 0 && (
-        <div className="mb-8">
-          <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-4 uppercase tracking-wide">
-            Recent Contributions (Public repos)
-          </h3>
-          <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg overflow-x-auto flex justify-center">
-            <ContributionGraph contributions={contributions} />
-          </div>
-        </div>
-      )}
-
-      <div className="flex justify-center">
-        <img
-          alt="GitHub Streak Stats"
-          src="https://github-readme-streak-stats.herokuapp.com/?user=diegoglezsu&theme=vision-friendly-dark&show_icons=true&hide_border=false&line_height=20&title_color=007bff&icon_color=00438a&show_owner=true"
-          className="inline-block rounded-md"
-        />
       </div>
     </div>
   );
