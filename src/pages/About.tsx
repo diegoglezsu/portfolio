@@ -18,7 +18,7 @@ export default function About() {
         <p>
           Hi! I'm <b>{SITE.name}</b> — a software and web engineer from Spain 🇪🇸
           passionate about building software and sharing what I learn along the
-          way. I consider myself as a proactive person who always likes to look
+          way. I consider myself as a proactive person who likes to look
           for new personal and professional opportunities towards improving my
           career path.
         </p>
@@ -32,8 +32,8 @@ export default function About() {
         <Timeline
           items={[
             {
-              date: "present",
-              title: "To be continued…",
+              date: "September 2026 - present",
+              title: "PhD in Computer Science",
               subtitle: "University of Oviedo",
             },
             {
@@ -62,7 +62,7 @@ export default function About() {
               title: "Researcher",
               subtitle: "University of Oviedo",
               description:
-                "I research new technologies related to AI systems and how to integrate AI modules into a wide variety of systems. I have been participating in many projects with different AI models using Ollama, cloud infrastructures, and many other tools. I have been a technical member of the CEISIA.",
+                "I research new technologies related to AI systems and how to integrate AI modules into a wide variety of systems. I have been participating in many projects with different AI models using Ollama, cloud infrastructures, HuggingFace, and many other tools. I have been a technical member of CEISIA and UNIMODE Research Group.",
             },
             {
               date: "April 2024 – September 2025",
