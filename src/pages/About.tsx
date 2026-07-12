@@ -58,32 +58,39 @@ export default function About() {
         <Timeline
           items={[
             {
-              date: "September 2025 – present",
+              date: "January 2026 – present",
               title: "Researcher",
               subtitle: "University of Oviedo",
               description:
-                "I research new technologies related to AI systems and how to integrate AI modules into a wide variety of systems. I have been participating in many projects with different AI models using Ollama, cloud infrastructures, HuggingFace, and many other tools. I have been a technical member of CEISIA and UNIMODE Research Group.",
+                "Development of natural language processing and information aggregation techniques aimed at the automatic extraction of knowledge from structured and unstructured text. Design and adaptation of conversational models to support interaction with the extracted information, and the incorporation of computationally efficient consensus-building methods to integrate and prioritise the results. Member of UNIMODE research group (Cod. Project: SEK-25-GRU-GIC-24-018).",
+            },
+            {
+              date: "September 2025 – December 2025",
+              title: "Software Engineer",
+              subtitle: "CEISIA - University of Oviedo",
+              description:
+                "Technical collaboration with the joint CEISIA–Town Council working group to adapt the development to the identified requirements. Implementation of functionalities aimed at automating administrative procedures and data management. Integration of artificial intelligence models developed by CEISIA researchers for the analysis and exploitation of data related to the procedure. Preparation of technical documentation and support for the validation and functional testing of the prototype. (Cod. Project: SV-24-SIERO-CEISIA).",
             },
             {
               date: "April 2024 – September 2025",
               title: "Software and Web Engineer",
               subtitle: "Indra",
               description:
-                "Experience on real industry projects for public institutions. I worked with Java environments focused on Spring framework, Oracle Database System and AngularJS as a fullstack software engineer.",
+                "Experience on real industry projects for public institutions. I worked with Java environments focused on Spring framework, Oracle Database System and AngularJS as a fullstack software engineer. I also worked on the deployment of the applications in on-premise environments.",
             },
             {
               date: "October 2023 – April 2024",
               title: "Software Engineer",
               subtitle: "The Cocktail",
               description:
-                "Work on projects for energy companies in Portugal and Spain. I used Node.js with TypeScript and NestJS framework to develop and design REST API services.",
+                "Work on projects for energy companies in Portugal and Spain. I used Node.js with TypeScript and NestJS framework to develop and design REST API services. Collaboration with the frontend team to integrate the backend services with Vue.js applications. I also worked on the deployment of the applications in cloud environments.",
             },
             {
               date: "July 2022 – August 2022",
               title: "Intern",
               subtitle: "TotalEnergies",
               description:
-                "Developed Python scripts to download and manage XML datafiles about energy production in Spain.",
+                "Developed Python scripts to download and manage XML datafiles about energy production in Spain. Database management and data analysis to generate reports and visualizations for the company.",
             },
           ]}
         />
