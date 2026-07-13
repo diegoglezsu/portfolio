@@ -15,7 +15,7 @@ export default function PostCard({ post }: Props) {
     : "";
 
   return (
-    <article className="group py-2 border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors rounded-lg px-2 -mx-2">
+    <article data-cuelume-hover="tick" className="group py-2 border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors rounded-lg px-2 -mx-2">
       <Link to={`/posts/${post.slug}`} className="block">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 leading-snug mb-1 transition-colors">
           {post.title}

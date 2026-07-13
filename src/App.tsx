@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
+import { bind } from "cuelume";
 import Layout from "./components/Layout";
 import Post from "./components/Post";
 import About from "./pages/About";
@@ -9,6 +11,10 @@ import Tag from "./pages/Tag";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
+  useEffect(() => {
+    bind();
+  }, []);
+
   return (
     <HashRouter>
       <Routes>

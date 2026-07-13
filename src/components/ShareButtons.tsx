@@ -83,6 +83,7 @@ export default function ShareButtons({ title }: Props) {
           <button
             onClick={handleCopy}
             aria-label="Copy link"
+            data-cuelume-press
             className="text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
             title={copied ? "Copied!" : "Copy link"}
           >

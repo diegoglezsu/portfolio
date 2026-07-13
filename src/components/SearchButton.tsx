@@ -5,6 +5,7 @@ export default function SearchButton() {
     <Link
       to="/search"
       aria-label="Search"
+      data-cuelume-press
       className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
     >
       <svg

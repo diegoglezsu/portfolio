@@ -42,6 +42,7 @@ export default function Header() {
           <button
             onClick={() => setMenuOpen((s) => !s)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
+            data-cuelume-tick
             className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             {menuOpen ? (

@@ -16,6 +16,7 @@ export default function ThemeToggle() {
     <button
       onClick={() => setDark((d) => !d)}
       aria-label="Toggle theme"
+      data-cuelume-toggle
       className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
     >
       {dark ? (
